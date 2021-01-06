@@ -1,0 +1,29 @@
+class Solution(object):
+    def addTwoNumbers(self, l1, l2):
+        a=" "
+        b=" "
+        c1=0
+        c=ListNode(0)
+        c11=c
+        vo=0
+        while(l1!=None):
+            a=a+str(l1.val)
+            l1=l1.next
+            c1+=1
+        while(l2!=None):
+            b=b+str(l2.val)
+            l2=l2.next
+            vo+=1
+        a1=a[::-1]
+        b1=b[::-1]
+        q=int(a1)
+        w=int(b1)
+        o=q+w
+        if(o==0):
+            c11.next=ListNode(o)
+        while(o!=0):
+            c11.next=ListNode(o%10)
+            o/=10
+            c11=c11.next
+        
+        return c.next
